@@ -104,7 +104,7 @@ OnTick(function (myHero)
           if Mix:Mode() == "Harass" then
             if FioraMenu.Harass.Q:Value() and Ready(_Q) and ValidTarget(target, 400) then
 				if target ~= nil then 
-                                      CastTargetSpell(target, _Q)
+                                       CastSkillShot(_Q, target)
                                 end
             end
 
@@ -137,7 +137,7 @@ OnTick(function (myHero)
 
             if FioraMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 400) then
 		     if target ~= nil then 
-                         CastTargetSpell(target, _Q)
+                         CastSkillShot(_Q, target)
                      end
             end
 
@@ -159,7 +159,7 @@ OnTick(function (myHero)
 	    
 	    
             if FioraMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, 500) and (EnemiesAround(myHeroPos(), 700) >= FioraMenu.Combo.RX:Value()) then
-			CastSkillShot(_R, target)
+			CastSpell(_R)
             end
 
           end
@@ -190,7 +190,7 @@ OnTick(function (myHero)
                 
                 if IsReady(_Q) and ValidTarget(enemy, 700) and FioraMenu.KillSteal.Q:Value() and GetHP(enemy) < getdmg("Q",enemy) then
 		         if target ~= nil then 
-                                      CastTargetSpell(target, _Q)
+                                       CastSkillShot(_Q, target)
 		         end
                 end 
 
@@ -203,7 +203,7 @@ OnTick(function (myHero)
       if Mix:Mode() == "LaneClear" then
       	  for _,closeminion in pairs(minionManager.objects) do
 	        if FioraMenu.LaneClear.Q:Value() and Ready(_Q) and ValidTarget(closeminion, 700) then
-	        	CastTargetSpell(closeminion, _Q)
+	        	CastSkillShot(closeminion, _Q)
                 end
 
                 if FioraMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(closeminion, 700) then
@@ -226,7 +226,7 @@ OnTick(function (myHero)
         --AutoMode
         if FioraMenu.AutoMode.Q:Value() then        
           if Ready(_Q) and ValidTarget(target, 400) then
-		      CastTargetSpell(target, _Q)
+		       CastSkillShot(_Q, target)
           end
         end 
         if FioraMenu.AutoMode.W:Value() then        
@@ -241,7 +241,7 @@ OnTick(function (myHero)
         end
         if FioraMenu.AutoMode.R:Value() then        
 	  if Ready(_R) and ValidTarget(target, 500) then
-		     CastSkillShot(_R, target)
+		     CastSpell(_R)
 	  end
         end
                 

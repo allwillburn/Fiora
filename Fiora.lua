@@ -241,7 +241,7 @@ OnTick(function (myHero)
         end
         if FioraMenu.AutoMode.R:Value() then        
 	  if Ready(_R) and ValidTarget(target, 500) then
-		     CastTargetSpell(_R, target)
+		     CastTargetSpell(target, _R)
 	  end
         end
                 

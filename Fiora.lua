@@ -264,12 +264,12 @@ OnDraw(function (myHero)
 end)
 
 
-OnProcessSpell(function(unit, spell)
-	local target = GetCurrentTarget()        
-       
-        if unit.isMe and spell.name:lower():find("Fioraempowertwo") then 
-		Mix:ResetAA()	
-	end        
+     
+OnProcessSpellComplete(function(unit, spell)
+  if unit == myHero and spell.name == ("FioraE") then
+		Mix:ResetAA()
+  end
+
 
         if unit.isMe and spell.name:lower():find("itemtiamatcleave") then
 		Mix:ResetAA()

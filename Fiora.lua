@@ -159,7 +159,7 @@ OnTick(function (myHero)
 	    
 	    
             if FioraMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, 500) and (EnemiesAround(myHeroPos(), 700) >= FioraMenu.Combo.RX:Value()) then
-			CastTargetSpell(target, _R)
+			CastTargetSpell(target,_R)
             end
 
           end

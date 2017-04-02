@@ -271,16 +271,6 @@ OnProcessSpellComplete(function(unit, spell)
   end
 
 
-        if unit.isMe and spell.name:lower():find("itemtiamatcleave") then
-		Mix:ResetAA()
-	end	
-               
-        if unit.isMe and spell.name:lower():find("itemravenoushydracrescent") then
-		Mix:ResetAA()
-	end
-
-end) 
-
 
 local function SkinChanger()
 	if FioraMenu.SkinChanger.UseSkinChanger:Value() then
